@@ -7,6 +7,10 @@ import Footer from './Footer.js';
 import NotFound from './NotFound.js';
 
 class App extends React.Component {
+  constructor(props){
+    super(props);
+    this.blog = window.blog;
+  }
   render(){
     return (
       <div className="bg-light">
