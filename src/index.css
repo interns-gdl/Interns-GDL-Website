@@ -1,0 +1,21 @@
+.text-brand {
+  font-family: 'Roboto Mono', monospace;
+}
+
+.bg-indigo{
+  background-color: #083D77;
+}
+
+.bg-blue{
+  background-color: #66C3FF;
+}
+
+div .text-indigo{
+  background-color: transparent;
+  color: #083D77;
+}
+
+div .text-blue{
+  background-color: transparent;
+  color: #66C3FF;
+}
