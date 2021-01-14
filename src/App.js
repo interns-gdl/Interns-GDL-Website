@@ -80,6 +80,14 @@ class App extends React.Component {
                   <Page object={this.state.pages.wellcome.object}/>
                 )} />
 
+                <Route exact path="/apply" render={()=>(
+                  <div>
+                    <Page object={this.state.pages.apply.object}/>
+                    <h1>Apply APP</h1>
+                  </div>
+                  
+                )} />
+
                 <Route path="/:pageId" render={({ match })=>{
                   if(this.state.pages[match.params.pageId])
                     return <Page object={this.state.pages[match.params.pageId].object}/>
@@ -90,7 +98,7 @@ class App extends React.Component {
                 
                 <Route component={NotFound}/>
               </Switch>
-              <Route exact path="/apply" render={()=> <h1>Apply APP</h1> }/>
+
             </div>
             )
 

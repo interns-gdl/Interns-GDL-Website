@@ -10,12 +10,27 @@
   background-color: #66C3FF;
 }
 
-div .text-indigo{
+.text-indigo{
   background-color: transparent;
   color: #083D77;
 }
 
-div .text-blue{
+.text-blue{
+  background-color: transparent;
+  color: #66C3FF;
+}
+
+.text-cultured{
+  background-color: transparent;
+  color: #F7F7F7;
+}
+
+.link-cultured{
+  background-color: transparent;
+  color: #F7F7F7;
+}
+
+.link-cultured:hover{
   background-color: transparent;
   color: #66C3FF;
 }
