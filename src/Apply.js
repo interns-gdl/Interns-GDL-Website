@@ -34,7 +34,7 @@ class Apply extends React.Component{
         <div className="row">
           {
             this.state.info.map(company => (
-              <div key={company.link} className="col-12 col-sm-6 col-md-4 col-lg-3 text-center">
+              <div key={company.link} className="col-6 col-md-4 col-lg-3 text-center">
                 <Link to={company.link} >
                   <img src={company.image}  alt="" className="img-fluid btn-brand"/>
                 </Link>
