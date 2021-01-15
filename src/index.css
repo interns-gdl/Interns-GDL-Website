@@ -34,3 +34,13 @@
   background-color: transparent;
   color: #66C3FF;
 }
+
+.btn-indigo{
+  background-color: #083D77;
+  color: #F7F7F7;
+}
+
+.btn-indigo:hover{
+  background-color: #66C3FF;
+  color: #292b2c;
+}

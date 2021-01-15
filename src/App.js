@@ -88,16 +88,17 @@ class App extends React.Component {
                 )} />
 
                 <Route path="/:pageId" render={({ match })=>{
-                  if(this.state.pages[match.params.pageId])
+                  if(this.state.pages[match.params.pageId]){
+                    const onlyDescription = ['workshops', 'events'].includes(match.params.pageId);
                     return(
                       <div>
                         <Page object={this.state.pages[match.params.pageId].object}/>
-                        <Feed label={match.params.pageId}/>
+                        <Feed label={match.params.pageId} onlyDescription={onlyDescription} />
                       </div>
                     ) 
-
+                  }
                   else
-                    <NotFound/>
+                    return <NotFound/>
                 }} />
                 
                 <Route component={NotFound}/>

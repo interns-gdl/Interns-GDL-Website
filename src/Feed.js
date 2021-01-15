@@ -53,8 +53,6 @@ class Feed extends React.Component{
 
         if (prevProps.label === label) return;
 
-        console.log('update to ', label);
-
         if (!this.state.content) return;
 
         if (this.state.content[label]){
@@ -78,7 +76,7 @@ class Feed extends React.Component{
             return <div></div>
 
         const posts = items.map(item =>(
-            <PostPreview key={ item.id } item= {item} />
+            <PostPreview key={ item.id } item= {item} onlyDescription={this.props.onlyDescription} />
         ));
     
         return (
