@@ -9,6 +9,7 @@ import Page from './Page.js';
 import Feed from './Feed.js';
 import Loader from './Loader.js';
 import Post from './Post.js';
+import Apply from './Apply.js';
 
 class App extends React.Component {
   constructor(props){
@@ -83,7 +84,7 @@ class App extends React.Component {
                 <Route exact path="/apply" render={()=>(
                   <div>
                     <Page object={this.state.pages.apply.object}/>
-                    <h1>Apply APP</h1>
+                    <Apply/>
                   </div>
                   
                 )} />

@@ -44,3 +44,19 @@
   background-color: #66C3FF;
   color: #292b2c;
 }
+
+.btn-light{
+  background-color: #F7F7F7;
+}
+
+.btn-light:hover{
+  background-color: #66C3FF;
+}
+
+.btn-brand{
+  padding: 2rem;
+}
+
+.btn-brand:hover{
+  padding: 1rem;
+}
