@@ -6,6 +6,7 @@ import Navbar from './Navbar.js';
 import Footer from './Footer.js';
 import NotFound from './NotFound.js';
 import Page from './Page.js';
+import Feed from './Feed.js';
 
 class App extends React.Component {
   constructor(props){
@@ -44,9 +45,6 @@ class App extends React.Component {
         id: '5970652687288488125',
         object: null,
       },
-    },
-    posts:{
-
     },
   }
 
@@ -90,7 +88,12 @@ class App extends React.Component {
 
                 <Route path="/:pageId" render={({ match })=>{
                   if(this.state.pages[match.params.pageId])
-                    return <Page object={this.state.pages[match.params.pageId].object}/>
+                    return(
+                      <div>
+                        <Page object={this.state.pages[match.params.pageId].object}/>
+                        <Feed label={match.params.pageId}/>
+                      </div>
+                    ) 
 
                   else
                     <NotFound/>
