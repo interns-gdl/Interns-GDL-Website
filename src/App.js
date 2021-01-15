@@ -7,6 +7,7 @@ import Footer from './Footer.js';
 import NotFound from './NotFound.js';
 import Page from './Page.js';
 import Feed from './Feed.js';
+import Loader from './Loader.js';
 
 class App extends React.Component {
   constructor(props){
@@ -70,7 +71,7 @@ class App extends React.Component {
         <main>
           {
             this.state.loading ? 
-            'Loading...' :
+            <Loader /> :
             (
             <div>
               <Switch>

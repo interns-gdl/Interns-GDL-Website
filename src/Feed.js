@@ -1,6 +1,7 @@
 import React from 'react';
 
 import PostPreview from './PostPreview.js';
+import Loader from './Loader.js';
 
 class Feed extends React.Component{
     constructor(props){
@@ -69,7 +70,7 @@ class Feed extends React.Component{
         const label = this.props.label;
 
         if(this.state.loading || !content[label]){
-            return <div> Loading... </div>
+            return <Loader />
         }
         
         const items = content[label].items;
