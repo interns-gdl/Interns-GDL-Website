@@ -8,6 +8,7 @@ import NotFound from './NotFound.js';
 import Page from './Page.js';
 import Feed from './Feed.js';
 import Loader from './Loader.js';
+import Post from './Post.js';
 
 class App extends React.Component {
   constructor(props){
@@ -85,6 +86,10 @@ class App extends React.Component {
                     <h1>Apply APP</h1>
                   </div>
                   
+                )} />
+
+                <Route path="/post/:postId" render={( { match } ) => (
+                  <Post id={match.params.postId} />
                 )} />
 
                 <Route path="/:pageId" render={({ match })=>{
