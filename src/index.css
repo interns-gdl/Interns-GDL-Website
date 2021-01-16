@@ -35,6 +35,16 @@
   color: #66C3FF;
 }
 
+.link-blue{
+  background-color: transparent;
+  color: #66C3FF;
+}
+
+.link-blue:hover{
+  background-color: transparent;
+  color: #083D77;
+}
+
 .btn-indigo{
   background-color: #083D77;
   color: #F7F7F7;
