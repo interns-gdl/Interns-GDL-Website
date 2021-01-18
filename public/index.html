@@ -47,5 +47,28 @@
     <script>
       window.blog = new Blog('6426196012107835937', 'AIzaSyB0jU-8rYv7tYVhHHVNMbCwsNaqFA27E1o');
     </script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyDmtxnDEauqmg_fWA89QAOJYBA45rqALCg",
+        authDomain: "interns-gdl.firebaseapp.com",
+        projectId: "interns-gdl",
+        storageBucket: "interns-gdl.appspot.com",
+        messagingSenderId: "1000448766911",
+        appId: "1:1000448766911:web:4166e2565be91b1c27e70a",
+        measurementId: "G-BNL45VV81E"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
   </body>
 </html>
