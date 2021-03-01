@@ -11,6 +11,8 @@ import Loader from './Loader.js';
 import Post from './Post.js';
 import Apply from './Apply.js';
 
+import InternsImg from './img/interns.png';
+
 class App extends React.Component {
   constructor(props){
     super(props);
@@ -78,7 +80,12 @@ class App extends React.Component {
             <div>
               <Switch>
                 <Route exact path="/" render={()=>(
-                  <Page object={this.state.pages.wellcome.object}/>
+                  <div>
+                    <div className="parallax" style={{
+                      backgroundImage: `url(${ InternsImg })`
+                    }}></div>
+                    <Page object={this.state.pages.wellcome.object}/>
+                  </div>                  
                 )} />
 
                 <Route exact path="/apply" render={()=>(
