@@ -10,6 +10,7 @@ import Feed from './Feed.js';
 import Loader from './Loader.js';
 import Post from './Post.js';
 import Apply from './Apply.js';
+import EditCompanies from './EditCompanies';
 
 import InternsImg from './img/interns.png';
 
@@ -79,6 +80,11 @@ class App extends React.Component {
             (
             <div>
               <Switch>
+                <Route exact path="/test" render={()=>(
+                  <div>
+                    <EditCompanies />
+                  </div>                  
+                )} />
                 <Route exact path="/" render={()=>(
                   <div>
                     <div className="parallax" style={{
