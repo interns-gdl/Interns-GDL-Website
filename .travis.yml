@@ -1,12 +1,14 @@
 language: node_js
 node_js:
   - "14.0"
-branches:
-  only:
-  - main
 script:
   - echo "Deploying! :D"
   - npm install
   - npm build
-after_success:
-  - firebase deploy --token $FIREBASE_TOKEN 
+before_deploy: "echo 'Starting Deployment'"
+deploy:
+  provider: firebase
+  token:
+    secure: "uVd4xA1/wymUDXbMnaElWzK40+mNVL0jZhQNtMrnt3hFigtWioeqwQ9icWlkbBmh32d5k2GmwSD/nEs67qJBfim6D8XwKtZYmKWBDoSudHhZvt/sFfNN32OLkyyyXbRYRXCLxrN4H6qaepO5t78oeZZiYo5mon93pngrPYknvCYjjeeZ5SPEagaDnC9FC/0iA/Lsm+gcbOx+/BIKxh/DrYNumeHc3VSocXitme5QwfA/G/YrTqBK2U5BvrWfi5AcwhAptFSmfJu5ULm0BXVmMD+zsSkQoi/ACPGaxZ9lE+PuAEl7L4p1GWt/D8uk0JQlwGY5qrJsewcjRATaBc/0/IxF6HZvIAcmIZUFMw0oUh/ksK1oTBadiAr46r0FEam7AbBBmtyvxyP0A84AXXK/GTgqCUCiP5yxYV6a/rWIwkPd3MHsfDbPe+dyAbXJmQM3yDxGujBF5pRUheDsxMpkCzOq/FRAqKAkU0EoWDPCLK2cfLlDw9O/vcu05i/g6ew+YNTQe/aK2zE/upUdW2rTOQe/cOUC5XHlsLP53snr8D2GRrsn+BXNnHS/Wq5nTofe097lcI1aEboKLhxa3+3BPfw+R7TzdXze0/urKXqYFoNHlDTJQ2NhbxwdhzpnYwIvSU7kVL3wANqf0m4FLdJCzDQTGvcNOfT5rWlBz9EmPCc="
+  branch: main
+after_deploy: "echo 'Deployed successfully to https://interns-gdl.web.app/'"
