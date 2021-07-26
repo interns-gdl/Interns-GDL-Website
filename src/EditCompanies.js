@@ -27,9 +27,8 @@ function EditCompanies() {
   useEffect(() => readCompanies(), []);
 
   return (
-    <div>
+    <div className="container my-3">
       <CompaniesTable 
-        key="companiestable"
         columnNames={["Company", "Post ID", "Image", ""]}
         data={companies}
         remove_function={(id) => removeCompanies(id)}

@@ -15,7 +15,7 @@ function Row({ rowData, remove_function }) {
 
 function CompaniesTable({ columnNames, data, remove_function }) {
   return (
-    <div>
+    <div className="table-responsive">
       <table className="table">
         <thead>
           <tr>
