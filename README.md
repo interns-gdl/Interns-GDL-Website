@@ -18,8 +18,8 @@ We want to make Guadalajara and eventually Mexico a hot spot for recruiting tale
 
 ---
 ### Connect with us:
-[<img align="left" alt="Internsgdl.com" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />](https://interns-gdl.web.app)  
-[<img align="left" alt="Interns GDL | Twitter" width="24px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/twitter.svg" />](https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fgithub.com%2Finternsgdl&screen_name=internsgdl) 
-[<img align="left" alt="Interns GDL | Instagram" width="24px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/instagram.svg" />](https://www.instagram.com/interns.gdl/)   
+[<img  alt="Internsgdl.com" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />](https://interns-gdl.web.app)  
+[<img  alt="Interns GDL | Twitter" width="24px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/twitter.svg" />](https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fgithub.com%2Finternsgdl&screen_name=internsgdl) 
+[<img  alt="Interns GDL | Instagram" width="24px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/instagram.svg" />](https://www.instagram.com/interns.gdl/)   
 [<img alt="Interns GDL | Discord" width="24px" src="https://cdn.jsdelivr.net/npm/simple-icons@5.8.0/icons/discord.svg" />](https://discord.com/invite/2md6g9mjBC) 
 [<img src="https://img.icons8.com/ios/50/000000/composing-mail.png" width="24px"/>](mailto:contacto.intersngdl@gmail.com) 
