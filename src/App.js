@@ -96,6 +96,11 @@ class App extends React.Component {
                   
                 )} />
 
+                <Route exact path="/discord" render={()=>{
+                    window.location.replace('https://discord.gg/2md6g9mjBC')
+                    return <div></div>
+                }} />
+
                 <Route path="/post/:postId" render={( { match } ) => (
                   <Post id={match.params.postId} />
                 )} />
