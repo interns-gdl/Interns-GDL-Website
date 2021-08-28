@@ -1,15 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-import Logo from './Logo.js';
+import Logo from '../Logo.js';
+import NavbarElement from './NavbarElement.js'
 
-function NavarElement({ text, link }) {
-  return (
-    <Link to={link} className="text-decoration-none">
-      <span className="nav-link">{text}</span>
-    </Link>
-  )
-}
 
 function Navbar() {
 
@@ -39,7 +33,7 @@ function Navbar() {
 
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav">
-            { elements.map((elem) => <NavarElement text={elem.text} link={elem.link} key={elem.text}/>) }
+            { elements.map((elem) => <NavbarElement text={elem.text} link={elem.link} key={elem.text}/>) }
           </div>
         </div>
 

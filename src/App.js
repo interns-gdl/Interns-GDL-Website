@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import Navbar from './Navbar.js';
+import Navbar from './navbar/Navbar.js';
 import Footer from './Footer.js';
 import NotFound from './NotFound.js';
 import Page from './Page.js';
