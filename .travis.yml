@@ -1,17 +1,12 @@
 language: node_js
 node_js:
-  - "node"
+  - node
 warnings_are_errors: false
 install:
-  - npm install
+  - npm install firebase-tools -g
 script:
   - npm run build
-before_deploy: "echo 'Starting Deployment'"
-deploy:
-  provider: firebase
-  skip_cleanup: true
-  token:
-    secure: "VIdH/e6H0tXC/E7mg4rBBPZSN9+E8kUn023R7JZtOooX40WLrlV5K3wS80scfIv8WGYKt0V5BaB6QHi4Cgne9uTaVykIXsBQz9U7/F3bAkz0zA0fdsf4uzLZXCBQiwBAoR2HY7LR27jWC1dAR5y6tCLI+8xBRw0pWiiGm8M6qfq4ZbSE5cQBW+bNBUvJgYYFIuIA/Z+dKoradZBpUsVTb3SPw7J8Dy7seDI70ZBayK1JaA22Tf+HhmW0nKWgHRgaNJDl5uWoiUwrxShRYl4x2iqLp2Dyt43X5GD5TkJvIwiD6Cpr3dfRItPmVcQlMR+fgrdhCO/jiMXoCa5BSomyrB97KXpOF6P41cgMvfXeI/m+EPRzbeCB8brYwswkdxQ09XOIog3eYuqmGW6ONFEpVpE/n1xF0vk+A+M9gJf2QoHOtlTTNi+ujPPS0YJN2hTLpK9C8C+f9KFXDitKJJGEKTxCNlvaxbJsarPio/mY5IhmqkOPUThBFJhW6Tqq7Ls1Qcno1kND5GFu3cfQ9gywuoY1TpB15lfKbcf3e+TX4xMb09CU7S1tFqt+/i9GW1c7Wrybh1K0xgUL1dmZkgX1ovv0tNOA3uccJAg68g0Y9hot8oIJF0f1OIVFN5zKwIa+Ii6mG2eIOKZRejhmQboByE+5B7qAO4uchaSZj2tK34E="
-  on:  
-    branch: main
-after_deploy: "echo 'Deployed successfully to https://internsgdl.org/'"
+  - firebase deploy --only hosting --token $FIREBASE_TOKEN
+branches:
+  only:
+    - main
