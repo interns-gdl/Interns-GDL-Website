@@ -3,6 +3,7 @@ node_js:
   - node
 warnings_are_errors: false
 install:
+  - npm install
   - npm install firebase-tools -g
 script:
   - npm run build
