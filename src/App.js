@@ -1,136 +1,159 @@
-import './App.css';
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import Navbar from './navbar/Navbar.js';
-import Footer from './Footer.js';
-import NotFound from './NotFound.js';
-import Page from './Page.js';
-import Feed from './Feed.js';
-import Loader from './Loader.js';
-import Post from './Post.js';
-import Apply from './Apply.js';
+import Navbar from "./navbar/Navbar.js";
+import Footer from "./Footer.js";
+import NotFound from "./NotFound.js";
+import Page from "./Page.js";
+import Feed from "./Feed.js";
+import Loader from "./Loader.js";
+import Post from "./Post.js";
+import Apply from "./Apply.js";
 
-import InternsImg from './img/interns.png';
+import InternsImg from "./img/interns.png";
+import Linktree from "./Linktree/Linktree.js";
 
 class App extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.blog = window.blog;
   }
 
   state = {
     loading: true,
-    pages:{
+    pages: {
       wellcome: {
-        id: '7828841653756224765',
+        id: "7828841653756224765",
         object: null,
       },
       apply: {
-        id: '2328598739056066741',
+        id: "2328598739056066741",
         object: null,
       },
       workshops: {
-        id: '2199017357197818931',
+        id: "2199017357197818931",
         object: null,
       },
       events: {
-        id: '3211716656855425183',
+        id: "3211716656855425183",
         object: null,
       },
       resources: {
-        id: '3698218358457609822',
+        id: "3698218358457609822",
         object: null,
       },
       fun: {
-        id: '163070253310031958',
+        id: "163070253310031958",
         object: null,
       },
       about: {
-        id: '5970652687288488125',
+        id: "5970652687288488125",
         object: null,
       },
     },
-  }
+  };
 
-  async componentDidMount(){
-    const pages = {}
+  async componentDidMount() {
+    const pages = {};
     for (const label in this.state.pages) {
       const element = this.state.pages[label];
       pages[label] = {
         id: element.id,
         object: await this.blog.requestPage(element.id),
-      }
+      };
     }
-    this.setState({ loading:false, pages: pages });
+    this.setState({ loading: false, pages: pages });
   }
 
-  render(){
+  render() {
     return (
       <div className="bg-light">
         <Router>
-        <header>
-          <Navbar />
-        </header>
-        <main>
-          {
-            this.state.loading ? 
-            <Loader /> :
-            (
-            <div>
-              <Switch>
-                <Route exact path="/" render={()=>(
-                  <div>
-                    <div className="parallax" style={{
-                      backgroundImage: `url(${ InternsImg })`
-                    }}></div>
-                    <Page object={this.state.pages.wellcome.object}/>
-                  </div>                  
-                )} />
-
-                <Route exact path="/apply" render={()=>(
-                  <div>
-                    <Page object={this.state.pages.apply.object}/>
-                    <Apply/>
-                  </div>
-                  
-                )} />
-
-                <Route exact path="/discord" render={()=>{
-                    window.location.replace('https://discord.gg/2md6g9mjBC')
-                    return <div></div>
-                }} />
-
-                <Route path="/post/:postId" render={( { match } ) => (
-                  <Post id={match.params.postId} />
-                )} />
-
-                <Route path="/:pageId" render={({ match })=>{
-                  if(this.state.pages[match.params.pageId]){
-                    const onlyDescription = ['workshops', 'events'].includes(match.params.pageId);
-                    return(
+          <header>
+            <Navbar />
+          </header>
+          <main>
+            {this.state.loading ? (
+              <Loader />
+            ) : (
+              <div>
+                <Switch>
+                  <Route
+                    exact
+                    path="/"
+                    render={() => (
                       <div>
-                        <Page object={this.state.pages[match.params.pageId].object}/>
-                        <Feed label={match.params.pageId} onlyDescription={onlyDescription} />
+                        <div
+                          className="parallax"
+                          style={{
+                            backgroundImage: `url(${InternsImg})`,
+                          }}
+                        ></div>
+                        <Page object={this.state.pages.wellcome.object} />
                       </div>
-                    ) 
-                  }
-                  else
-                    return <NotFound/>
-                }} />
-                
-                <Route component={NotFound}/>
-              </Switch>
+                    )}
+                  />
 
-            </div>
-            )
+                  <Route
+                    exact
+                    path="/apply"
+                    render={() => (
+                      <div>
+                        <Page object={this.state.pages.apply.object} />
+                        <Apply />
+                      </div>
+                    )}
+                  />
 
-          }
-          
+                  <Route
+                    exact
+                    path="/discord"
+                    render={() => {
+                      window.location.replace("https://discord.gg/2md6g9mjBC");
+                      return <div></div>;
+                    }}
+                  />
 
-        </main>
+                  <Route exact path="/linktree" render={() => <Linktree />} />
 
-        <Footer/>
+                  <Route
+                    path="/post/:postId"
+                    render={({ match }) => <Post id={match.params.postId} />}
+                  />
+
+                  <Route
+                    path="/:pageId"
+                    render={({ match }) => {
+                      if (this.state.pages[match.params.pageId]) {
+                        const onlyDescription = [
+                          "workshops",
+                          "events",
+                        ].includes(match.params.pageId);
+                        return (
+                          <div>
+                            <Page
+                              object={
+                                this.state.pages[match.params.pageId].object
+                              }
+                            />
+                            <Feed
+                              label={match.params.pageId}
+                              onlyDescription={onlyDescription}
+                            />
+                          </div>
+                        );
+                      } else return <NotFound />;
+                    }}
+                  />
+
+                  <Route component={NotFound} />
+                </Switch>
+              </div>
+            )}
+          </main>
+
+          <Footer />
         </Router>
       </div>
     );
